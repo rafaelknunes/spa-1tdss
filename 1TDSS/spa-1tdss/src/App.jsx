@@ -1,33 +1,24 @@
 import Cabecalho from "./Components/Cabecalho";
+import Conteudo from "./Components/Conteudo";
+import Rodape from "./Components/Rodape";
+import logoReact from "./assets/react.svg";
 
-export default function App() {
-  return (
-    <div className="app-container">
-      {/* Cabeçalho */}
-      <Cabecalho />
+export default function App(){
 
-      {/* Seção */}
-      <section>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu ante eget nisl 
-            convallis tempus. Phasellus ante lectus, tincidunt sit amet dui vel, luctus convallis metus.
-          </p>
-          <p>
-            Aliquam lacinia, sapien vitae sodales dapibus, metus nulla lacinia sapien, 
-            nec bibendum ligula erat ac augue. Suspendisse feugiat luctus ultrices.
-          </p>
-          <p>
-            Proin auctor libero at libero consectetur, vel cursus enim mollis. Vivamus 
-            sed fermentum nunc, sit amet convallis lorem.
-          </p>
-        </div>
-      </section>
-
-      {/* Rodapé */}
-      <footer>
-        <p>&copy; Todos os direitos reservados.</p>
-      </footer>
-    </div>
-  );
+  //Criando props para ser transmitido para um dos componentes filhos.
+  let novoConteudo = "Nova notícia!";
+  
+  let altLogo = "Logomarca da Tecnologia React!";
+  
+  return(
+    <>
+      {/* Crie um Cabeçalho com um h1 um título e uma lista com 3 itens. */}
+        <Cabecalho/>
+      {/* Crie uma Section com uma div e 3 parágrafos com texto lorem de 3 linhas. */}
+      {/* Passando três props para o componente filho. */}
+        <Conteudo novoProps={novoConteudo} uriLogoReact={logoReact} altLogoReact={altLogo}/>
+      {/* Crie um rodapé com um p e o código do símbolo de copyright mais o texto que se segue. "Todos os meus direitos reservados. 2023" */}
+        <Rodape/>
+    </>
+  )
 }
