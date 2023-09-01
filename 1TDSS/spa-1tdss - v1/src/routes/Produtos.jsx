@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom"
 import { ListaProdutos } from "../Components/ListaProdutos"
-import  "./Produtos.css";
-import { FaBeer } from 'react-icons/fa';
 
 export default function Produtos() {
   return (
@@ -14,7 +12,7 @@ export default function Produtos() {
                 <th>ID</th>
                 <th>NOME</th>
                 <th>PREÇO</th>
-                <th>EDITAR / EXCLUIR</th>
+                <th>EDITAR</th>
             </tr>
             </thead>
             <tbody>
@@ -23,13 +21,13 @@ export default function Produtos() {
                     <td>{produto.id}</td>
                     <td>{produto.nome}</td>
                     <td>{produto.preco}</td>
-                    <td><Link to={`/editar/produtos/${produto.id}`}><FaBeer/></Link> | <Link to={`/excluir/produtos/${produto.id}`}>Excluir</Link></td>
+                    <td><Link to={`/editar/produtos/${produto.id}`}>Editar</Link></td>
                  </tr>
             ))}
         </tbody>
         <tfoot>
         <tr>
-           <td colSpan={4}>PRODUTOS</td>
+           <td colSpan={2}>PRODUTOS</td>
         </tr>
         </tfoot>
         </table>
